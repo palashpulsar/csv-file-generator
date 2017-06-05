@@ -2,7 +2,7 @@
 
 This flask application is developed for generating a csv file from the data sent as https' GET method in the url form
 ```
-url/?var1=value1&var2=value2&......
+application_url/?var1=value1&var2=value2&......
 ```
 
 The application is deployed on heroku.
