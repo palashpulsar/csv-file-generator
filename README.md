@@ -14,6 +14,31 @@ The application is deployed on heroku.
 * [PostgreSQL](https://www.postgresql.org) as the database.
 * [Heroku](https://www.heroku.com) as the application deployment platform.
 
+## Description
+
+This application is developed as part of a larger data-analytical project. Its purpose is to collect data from GET requests and generate a CSV file out of the saved. This CSV file can then be further used for data-analysis with popular analytical tools such as MATLAB.
+
+A particular example of this application is to receive a vehicle's [On-board Diagnostic Data](https://en.wikipedia.org/wiki/On-board_diagnostics) from a [Torque Pro android app](https://play.google.com/store/apps/details?id=org.prowl.torque&hl=en). The Torque Pro app is configured to send data to a server URL that contains this application. In this case, Heroku platform is used for deploying this app.
+
+The app comprises of three primary functions:
+
+```
+from application import home
+```
+This function corresponds to reading the GET parameters and storing it in database.
+
+```
+from application import csv_file
+```
+This function corresponds to generating and auto-downloading csv file.
+
+```
+from application import deleting_content_in_database
+```
+This function corresponds to deleting data in database.
+
+These primary functions correspond to '/', '/download' and '/delete' urls respectively.
+
 ## Quick start
 
 Create a local repository with
@@ -66,31 +91,6 @@ For deleting data stored locally in database, type in the browser:
 ```
 http://127.0.0.1:5000/delete
 ```
-
-## Description
-
-This application is developed as part of a larger data-analytical project. Its purpose is to collect data from GET requests and generate a CSV file out of the saved. This CSV file can then be further used for data-analysis with popular analytical tools such as MATLAB.
-
-A particular example of this application is to receive a vehicle's [On-board Diagnostic Data](https://en.wikipedia.org/wiki/On-board_diagnostics) from a [Torque Pro android app](https://play.google.com/store/apps/details?id=org.prowl.torque&hl=en). The Torque Pro app is configured to send data to a server URL that contains this application. In this case, Heroku platform is used for deploying this app.
-
-The app comprises of three primary functions:
-
-```
-from application import home
-```
-This function corresponds to reading the GET parameters and storing it in database.
-
-```
-from application import csv_file
-```
-This function corresponds to generating and auto-downloading csv file.
-
-```
-from application import deleting_content_in_database
-```
-This function corresponds to deleting data in database.
-
-These primary functions correspond to '/', '/download' and '/delete' urls respectively.
 
 ## Heroku Deployment
 
