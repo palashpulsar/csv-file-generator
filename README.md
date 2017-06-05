@@ -94,5 +94,19 @@ These primary functions correspond to '/', '/download' and '/delete' urls respec
 
 ## Heroku Deployment
 
-The application is deployed in heroku.
+The application is deployed in heroku. URL is
+```
+https://csv-file-generator.herokuapp.com/
+```
+
+Therefore, data is sent to the url in the following format:
+```
+https://csv-file-generator.herokuapp.com/?var1=value1&var2=value2&......
+```
+
+The following two urls download the csv file and delete the data in the database respectively:
+```
+https://csv-file-generator.herokuapp.com/download
+https://csv-file-generator.herokuapp.com/delete
+```
 
